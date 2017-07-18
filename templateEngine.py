@@ -190,7 +190,7 @@ class Templite(object):
                 self._variable(func, self.all_vars)
                 code = "c_%s(%s)" % (func, code)
         elif "." in expr:
-            pipes = expr.split(".")
+            dots = expr.split(".")
             code = self._expr_code(dots[0])
             args = ", ".join(repr(d) for d in dots[1:])
             code = "do_dots(%s, %s)" %  (code, args)
